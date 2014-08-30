@@ -23,7 +23,7 @@ RUN apt-get install -y -q libzmq3-dev
 VOLUME /notebooks
 WORKDIR /notebooks
 
-RUN pip3 install ipython[notebook]
+RUN pip3 install ipython[all]
 
 EXPOSE 8888
 
