@@ -1,5 +1,5 @@
-# Using the Ubuntu image
-FROM ubuntu:14.04
+# Using the Debian unstable image
+FROM debian:unstable
 
 MAINTAINER Mike Miller <mike@mtmxr.com>
  
@@ -8,7 +8,7 @@ RUN apt-get update
 RUN apt-get upgrade -y
  
 # Not essential, but wise to set the lang
-RUN apt-get install -y language-pack-en
+RUN apt-get install -y locales
 ENV LANGUAGE en_US.UTF-8
 ENV LANG en_US.UTF-8
 ENV LC_ALL en_US.UTF-8
