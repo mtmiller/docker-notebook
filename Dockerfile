@@ -17,13 +17,13 @@ RUN locale-gen en_US.UTF-8
 RUN dpkg-reconfigure locales
  
 # Python binary dependencies, developer tools
-RUN apt-get install -y -q build-essential python python-dev python-pip
+RUN apt-get install -y -q build-essential python3 python3-dev python3-pip
 RUN apt-get install -y -q libzmq3-dev
 
 VOLUME /notebooks
 WORKDIR /notebooks
 
-RUN pip install ipython[notebook]
+RUN pip3 install ipython[notebook]
 
 EXPOSE 8888
 
