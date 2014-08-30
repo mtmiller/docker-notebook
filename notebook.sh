@@ -10,7 +10,7 @@ if [ ! -f $PEM_FILE ]; then
     -subj "/C=XX/ST=XX/L=XX/O=dockergenerated/CN=dockergenerated"
 fi
 
-HASH=$(python -c "from IPython.lib import passwd; print(passwd('${PASSWORD}'))")
+HASH=$(python3 -c "from IPython.lib import passwd; print(passwd('${PASSWORD}'))")
 unset PASSWORD
 
-ipython notebook --no-browser --port 8888 --ip=* --certfile=$PEM_FILE --NotebookApp.password="$HASH"
+ipython3 notebook --no-browser --port 8888 --ip=* --certfile=$PEM_FILE --NotebookApp.password="$HASH"
